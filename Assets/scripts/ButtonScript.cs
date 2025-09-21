@@ -13,6 +13,9 @@ public class ButtonScript : MonoBehaviour
                 case ("DrawbridgeScript"):
                     target.GetComponent<DrawbridgeScript>().Trigger();
                     break;
+                case ("MovingPlatform"):
+                    target.GetComponent<MovingPlatform>().Trigger();
+                    break;
             }
 
             transform.Find("Sprite").Translate(Vector3.down * 0.2f);
