@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float jumpForce = 300f;
     [SerializeField] private Transform LeftFoot, RightFoot;
-    [SerializeField] private Transform spawnPosition;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private AudioClip pickupSound;
     [SerializeField] private AudioClip[] jumpSounds;
@@ -22,13 +21,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Color greenHealth, redHealth;
     [SerializeField] private TMP_Text appleText;
 
-    private float horizontalValue;
+    private float horizontalInput;
     private float rayDistance = 0.25f;
     private bool isGrounded;
     private bool canMove;
     private int startingHealth = 5;
     private int currentHealth = 0;
     public int applesCollected = 0;
+    public Vector3 spawnPosition;
 
 
     private Rigidbody2D rgbd;
@@ -46,31 +46,33 @@ public class PlayerMovement : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         audioSource = GetComponent<AudioSource>();
+        spawnPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        horizontalValue = Input.GetAxis("Horizontal");
+        isGrounded = CheckIfGrounded();
+        horizontalInput = Input.GetAxis("Horizontal");
 
-        if(horizontalValue < 0)
+        if(horizontalInput < 0)
         {
-            Flipsprite(true);
+            FlipSprite(true);
         }
 
-        if (horizontalValue > 0)
+        if (horizontalInput > 0)
         {
-            Flipsprite(false);
+            FlipSprite(false);
         }
 
-        if (Input.GetButtonDown("Jump") && CheckifGrounded() == true)
+        if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             Jump();
         }
 
         anim.SetFloat("MoveSpeed", Mathf.Abs(rgbd.linearVelocity.x));
         anim.SetFloat("VerticalSpeed", rgbd.linearVelocity.y);
-        anim.SetBool("isGrounded", CheckifGrounded());
+        anim.SetBool("isGrounded", isGrounded);
     }
 
     private void FixedUpdate()
@@ -80,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        rgbd.linearVelocity = new Vector2(horizontalValue * moveSpeed * Time.deltaTime, rgbd.linearVelocity.y);
+        rgbd.linearVelocity = new Vector2(horizontalInput * moveSpeed * Time.deltaTime, rgbd.linearVelocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -101,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Flipsprite(bool direction)
+    private void FlipSprite(bool direction)
     {
         rend.flipX = direction;
     }
@@ -136,11 +138,11 @@ public class PlayerMovement : MonoBehaviour
         Invoke("CanMoveAgain", 0.25f);
     }
 
-    private void Respawn()
+    public void Respawn()
     {
         currentHealth = startingHealth;
         UpdateHealthBar();
-        transform.position = spawnPosition.position;
+        transform.position = spawnPosition;
         rgbd.linearVelocity = Vector2.zero;
     }
 
@@ -188,7 +190,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool CheckifGrounded()
+    private bool CheckIfGrounded()
     {
         RaycastHit2D leftHit = Physics2D.Raycast(LeftFoot.position, Vector2.down, rayDistance, whatIsGround);
         RaycastHit2D rightHit = Physics2D.Raycast(RightFoot.position, Vector2.down, rayDistance, whatIsGround);

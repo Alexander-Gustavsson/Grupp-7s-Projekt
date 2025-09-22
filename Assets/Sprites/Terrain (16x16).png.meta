@@ -689,7 +689,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_31
+      name: Platform1
       rect:
         serializedVersion: 2
         x: 272
@@ -711,7 +711,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_32
+      name: Platform2
       rect:
         serializedVersion: 2
         x: 288
@@ -733,7 +733,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_33
+      name: Platform3
       rect:
         serializedVersion: 2
         x: 304
@@ -887,7 +887,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plattform1
+      name: BreakingPlatform1
       rect:
         serializedVersion: 2
         x: 272
@@ -909,7 +909,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plattform2
+      name: BreakingPlattform2
       rect:
         serializedVersion: 2
         x: 289
@@ -931,7 +931,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Plattform3
+      name: BreakingPlattform3
       rect:
         serializedVersion: 2
         x: 304
@@ -3320,9 +3320,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Plattform1: 256190786
-      Plattform2: 214244323
-      Plattform3: 1838560642
+      BreakingPlatform1: 256190786
+      BreakingPlattform2: 214244323
+      BreakingPlattform3: 1838560642
+      Platform1: 1356059581
+      Platform2: -1614475946
+      Platform3: -1683031833
       Terrain (16x16)_0: -4874278423985981231
       Terrain (16x16)_1: 2492004042214043949
       Terrain (16x16)_10: 5587568460378422633
@@ -3392,9 +3395,6 @@ TextureImporter:
       Terrain (16x16)_29: 65139136
       Terrain (16x16)_3: 397718093594370940
       Terrain (16x16)_30: 424077911
-      Terrain (16x16)_31: 1356059581
-      Terrain (16x16)_32: -1614475946
-      Terrain (16x16)_33: -1683031833
       Terrain (16x16)_34: 647918783
       Terrain (16x16)_35: 1977518218
       Terrain (16x16)_36: 338927601
