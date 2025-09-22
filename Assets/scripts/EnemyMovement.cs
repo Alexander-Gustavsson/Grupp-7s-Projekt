@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+//Hej
+
 public class EnemyMovement : MonoBehaviour
 {
 
@@ -30,12 +32,12 @@ public class EnemyMovement : MonoBehaviour
 
         transform.Translate(new Vector2(moveSpeed, 0) * Time.deltaTime);
 
-        if(moveSpeed > 0)
+        if (moveSpeed > 0)
         {
             rend.flipX = true;
         }
 
-        if(moveSpeed < 0)
+        if (moveSpeed < 0)
         {
             rend.flipX = false;
         }
@@ -43,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("EnemyBlock"))
+        if (other.gameObject.CompareTag("EnemyBlock"))
         {
             moveSpeed = -moveSpeed;
         }
@@ -52,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
         {
             moveSpeed = -moveSpeed;
         }
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerMovement>().TakeDamage(damageGiven);
 
