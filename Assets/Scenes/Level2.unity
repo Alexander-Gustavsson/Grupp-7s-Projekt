@@ -5386,7 +5386,6 @@ MonoBehaviour:
   jumpForce: 400
   LeftFoot: {fileID: 1163813709}
   RightFoot: {fileID: 1118750665}
-  spawnPosition: {fileID: 2074791725}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1088
@@ -5406,6 +5405,7 @@ MonoBehaviour:
   redHealth: {r: 1, g: 0.2688679, b: 0.2688679, a: 1}
   appleText: {fileID: 1607056152}
   applesCollected: 0
+  spawnPosition: {x: 0, y: 0, z: 0}
 --- !u!95 &166859857
 Animator:
   serializedVersion: 7
@@ -14187,6 +14187,7 @@ MonoBehaviour:
   target1: {fileID: 55866914}
   target2: {fileID: 1398481120}
   moveSpeed: 2
+  moving: 1
 --- !u!251 &413712601
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -25003,7 +25004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef10f36ef9919eb4692f736e3402b79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 2074791725}
 --- !u!61 &717338147
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38939,7 +38939,7 @@ MonoBehaviour:
   finishedText: {fileID: 2057490473}
   unfinishedText: {fileID: 203233044}
   questGoal: 10
-  levelToLoad: 0
+  levelToLoad: 3
 --- !u!61 &988567656
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49931,7 +49931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef10f36ef9919eb4692f736e3402b79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 2074791725}
 --- !u!1 &1291627142
 GameObject:
   m_ObjectHideFlags: 0
@@ -63011,8 +63010,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 10
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 83905a606d64dd34aae4bbfff8237593, type: 2}
-  m_sharedMaterial: {fileID: 8070047618282137115, guid: 83905a606d64dd34aae4bbfff8237593, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -64308,7 +64307,7 @@ SpriteRenderer:
   m_Size: {x: 0.6875, y: 0.6875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1645484095
@@ -68035,7 +68034,7 @@ SpriteRenderer:
   m_Size: {x: 0.6875, y: 0.6875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1728748042
@@ -68929,7 +68928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef10f36ef9919eb4692f736e3402b79d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPosition: {fileID: 2074791725}
 --- !u!61 &1745845923
 BoxCollider2D:
   m_ObjectHideFlags: 0
