@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Hoppsan hejsan
+
 public class Trampoline : MonoBehaviour
 {
 
