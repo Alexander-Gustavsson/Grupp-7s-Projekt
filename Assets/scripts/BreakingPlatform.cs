@@ -25,7 +25,7 @@ public class BreakingPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Player") && breaker == null)
+        if(other.gameObject.CompareTag("Player") && breaker == null && other.transform.position.y > transform.position.y)
         {
             breaker = StartCoroutine(breakPlatform());
         }
