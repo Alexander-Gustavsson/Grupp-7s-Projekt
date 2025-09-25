@@ -14,6 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: c9be3d19b6af58349819f12d220728f8
+  - enabled: 1
+    path: Assets/Scenes/Puzzle_Carl-Anders.unity
+    guid: 7cddc44a57b281745b2e9b3158e42cf3
+  - enabled: 1
+    path: Assets/Scenes/Jonna lvl4.unity
+    guid: 9f0665177130f43a0b97e6209a4a13c6
+  - enabled: 1
+    path: Assets/Scenes/alex lvl.unity
+    guid: 75447ac1ac4165048b750634399b43e6
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
