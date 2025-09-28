@@ -91,7 +91,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Destroy(other.gameObject);
             applesCollected++;
-            ScoreKeeper.AddApple(other.gameObject.GetComponent<AppleID>().ID);
             appleText.text = "" + applesCollected;
             audioSource.pitch = Random.Range(0.8f, 1.2f);
             audioSource.PlayOneShot(pickupSound, 0.5f);
