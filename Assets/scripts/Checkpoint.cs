@@ -6,8 +6,6 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GetComponent<Animator>().SetTrigger("Flag");
-
             other.gameObject.GetComponent<PlayerMovement>().spawnPosition = transform.position;
         }
     }

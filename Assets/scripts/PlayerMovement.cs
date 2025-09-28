@@ -84,13 +84,14 @@ public class PlayerMovement : MonoBehaviour
 
         rgbd.linearVelocity = new Vector2(horizontalInput * moveSpeed * Time.deltaTime, rgbd.linearVelocity.y);
     }
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Apple"))
         {
             Destroy(other.gameObject);
             applesCollected++;
+            ScoreKeeper.AddApple(other.gameObject.GetComponent<AppleID>().ID);
             appleText.text = "" + applesCollected;
             audioSource.pitch = Random.Range(0.8f, 1.2f);
             audioSource.PlayOneShot(pickupSound, 0.5f);

@@ -1,16 +1,16 @@
+using NUnit.Framework;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class Score : MonoBehaviour
+public static class ScoreKeeper
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public static List<int> CollectedApples = new List<int>();
 
-    // Update is called once per frame
-    void Update()
+    public static void AddApple(int ID)
     {
-        
+        if (!CollectedApples.Contains(ID))
+        {
+            CollectedApples.Add(ID);
+        }
     }
 }
